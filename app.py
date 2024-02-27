@@ -1,6 +1,5 @@
 # Import libraries
 import streamlit as st
-import yfinance as yf
 from datetime import date
 import pandas as pd
 import numpy as np
@@ -13,6 +12,8 @@ from statsmodels.tsa.stattools import adfuller
 import statsmodels.api as sm
 # import prediction 
 from statsmodels.tsa.arima.model import ARIMA
+import yfinance as yf
+
 
 
 # Title
