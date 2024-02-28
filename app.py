@@ -1,5 +1,6 @@
 # Import libraries
 import streamlit as st
+import yfinance as yf
 from datetime import date
 import pandas as pd
 import numpy as np
@@ -12,8 +13,6 @@ from statsmodels.tsa.stattools import adfuller
 import statsmodels.api as sm
 # import prediction 
 from statsmodels.tsa.arima.model import ARIMA
-import yfinance as yf
-
 
 
 # Title
@@ -84,11 +83,10 @@ st.plotly_chart(px.line(x=data['Date'], y=decomposition.seasonal, title='Seasona
 st.plotly_chart(px.line(x=data['Date'], y=decomposition.resid, title='Residual',width=1000, height=400,labels={'x':'Date','y':'Price'}))
 
 # user input parameters 
-p = st.slider('Autoregressive Order', 0, 5, 0)
-d = st.slider('Differencing Order', 0, 5, 1)
-q = st.slider('Moving Average Order', 0, 5, 2)
-seasonal_order = st.number_input("Select the value of Seasonal Autoregressive Order", 0, 24, 12)
-
+p = st.slider('p', 0, 5, 0)
+d = st.slider('d', 0, 5, 1)
+q = st.slider('q', 0, 5, 2)
+seasonal_order = st.number_input("select the value of seasonal p  ",0,24,12)
 
 model = sm.tsa.statespace.SARIMAX(data[column], order=(p,d,q), seasonal_order=(p,d,q,seasonal_order))
 model = model.fit()
