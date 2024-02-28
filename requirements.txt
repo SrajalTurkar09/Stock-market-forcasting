@@ -6,7 +6,6 @@ matplotlib
 seaborn
 plotly
 statsmodels
-libgl1
 cmake
 libssl-dev
 opencv-python-headless==4.5.5.64
