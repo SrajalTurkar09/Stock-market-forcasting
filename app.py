@@ -87,7 +87,7 @@ st.plotly_chart(px.line(x=data['Date'], y=decomposition.resid, title='Residual',
 autoregressive_order = st.slider('Autoregressive Order', 0, 5, 0)
 differencing_order = st.slider('Differencing Order', 0, 5, 1)
 moving_average_order = st.slider('Moving Average Order', 0, 5, 2)
-seasonal_autoregressive_order = st.number_input("Select the value of Seasonal Autoregressive Order", 0, 24, 12)
+seasonal_order = st.number_input("Select the value of Seasonal Autoregressive Order", 0, 24, 12)
 
 
 model = sm.tsa.statespace.SARIMAX(data[column], order=(p,d,q), seasonal_order=(p,d,q,seasonal_order))
