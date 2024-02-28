@@ -84,9 +84,9 @@ st.plotly_chart(px.line(x=data['Date'], y=decomposition.seasonal, title='Seasona
 st.plotly_chart(px.line(x=data['Date'], y=decomposition.resid, title='Residual',width=1000, height=400,labels={'x':'Date','y':'Price'}))
 
 # user input parameters 
-autoregressive_order = st.slider('Autoregressive Order', 0, 5, 0)
-differencing_order = st.slider('Differencing Order', 0, 5, 1)
-moving_average_order = st.slider('Moving Average Order', 0, 5, 2)
+p = st.slider('Autoregressive Order', 0, 5, 0)
+d = st.slider('Differencing Order', 0, 5, 1)
+q = st.slider('Moving Average Order', 0, 5, 2)
 seasonal_order = st.number_input("Select the value of Seasonal Autoregressive Order", 0, 24, 12)
 
 
