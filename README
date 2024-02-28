@@ -1,5 +1,0 @@
-Before installing the Python dependencies with pip, make sure to install the required system packages:
-- For Debian/Ubuntu-based systems:
-
-  sudo apt update
-  sudo apt install libgl1-mesa-glx
